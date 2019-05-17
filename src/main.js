@@ -22,8 +22,8 @@ app.on('ready', _ => {
   })
 })
 
-ipc.on('countdown-start', _ => {
-  countdown(count => {
+ipc.on('countdown-start', (event, countFrom )=> {
+  countdown(countFrom, count => {
     windows.forEach(win => {
       win.webContents.send('countdown', count)
     })

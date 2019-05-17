@@ -1,8 +1,8 @@
-module.exports = function countdown(tick) {
-  let count = 4;
+module.exports = function countdown(countFrom, tick) {
+  // let count = 4;
   let timer = setInterval(_ => {
-    tick(count--)
-    if (count === -1)
+    tick(countFrom--)
+    if (countFrom === -1)
       clearInterval(timer)
   }, 1000);
 }
